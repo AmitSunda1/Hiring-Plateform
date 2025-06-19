@@ -7,20 +7,10 @@ import { assets } from '../assets/assets';
 
 function Header() {
 
-    const [search, setSearch] = useState(false);
+    const[search,setSearch]=useState(false);
   return (
     
     <div>
-        <Box sx={{
-         width:"143.46",
-        height:"48.79px",
-        top:"18px",
-        left:"2.22px",
-        radius:"8px",
-        position:"absolute",
-        }}>
-            <img src={assets.image_2} alt="" />
-        </Box>
       <Typography sx={{
         fontFamily:"poppins",
         fontWeight: "400",
@@ -36,8 +26,16 @@ function Header() {
       }}>
         Fat Secret Team
       </Typography>
-     
-    <div>
+    
+     <Box sx={{
+ 
+  width: '61px',
+  backgroundColor: '#E1E1E1',
+  position: 'absolute',
+  left:"498px",
+  border:"1px",
+  rotate:"-90 deg",
+}} />
 
         <Box sx={
             {
@@ -48,31 +46,35 @@ function Header() {
             left:"509px", 
             }
         }>
-            <IconButton sx={{
-                position:"relative",
-            }} onClick={()=>setSearch(!search)}>
-                <SearchIcon/>
+          {!search ?(
+            <IconButton onClick={()=>setSearch(true)}>
+               <SearchIcon/>
             </IconButton>
-                 {setSearch && (
-        <Paper
-          sx={{
-            position: 'absolute',
-            top: '40px',
-            right: 0,
-            p: '5px 10px',
-            display: 'flex',
-            alignItems: 'center',
-            width: 250,
-            boxShadow: 3,
-          }}
-        >
-          <InputBase
-            placeholder="Search…"
-            fullWidth
-            autoFocus
-          />
-        </Paper>
-      )}
+          ):
+          <Paper
+            component="form"
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              width: 200,
+              height: 36,
+              px: 1,
+              borderRadius: '20px',
+              backgroundColor: '#f0f0f0',
+            }}
+          >
+            <InputBase
+              placeholder="Search here"
+              sx={{ ml: 1, flex: 1, fontFamily: 'Poppins' }}
+              autoFocus
+            />
+            <IconButton >X</IconButton>
+          </Paper>
+       
+          }
+               
+         
+          
         
         </Box>
         <Box sx={{
@@ -80,7 +82,7 @@ function Header() {
             height:"30px",
             position:"absolute",
             top:"20px",
-            left:"1107px",
+            left:"1311px",
             backgroundColor:"#D9D9D9",
             borderRadius:"50%",
              display: 'flex',
@@ -99,7 +101,7 @@ function Header() {
          width: "30px",
           height: "30px",
          top: "20px",
-        left: "1158px",
+        left: "1355px",
          position:"absolute",
         backgroundColor:"#D9D9D9",
         borderRadius:"50%",
@@ -120,7 +122,7 @@ function Header() {
             width:"31px",
             height:"30px",
             top:"20px",
-            left:"1209px", 
+            left:"1400px", 
             position:"absolute",
             backgroundColor:" #D9D9D9",
             borderRadius:"50%",
@@ -133,14 +135,15 @@ function Header() {
               borderRadius: '50%',
             }}/>
         </Box>
-      </div>
-      <Box sx={{
+
+          <Box sx={{
   height: '1px',
   width: '100%',
   backgroundColor: '#E0E0E0',
   position: 'absolute',
   top: '65px',
 }} />
+
 
     </div>
     

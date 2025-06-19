@@ -1,29 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Box, Typography} from '@mui/material'
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import { assets } from '../assets/assets';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import AssignmentAddIcon from '@mui/icons-material/AssignmentAdd';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
+    const [color,setColor]=useState("Dashboard");
+  
   return (
-    <div style={{
+    <Box onClick={()=>setColor("#6B4FC8")}
+     sx={{
         width:"272.78px",
         height:"1041px",
         left:"2.22px",
         backgroundColor:"#FFFFFF",
+        
+        
     }}>
+      <Box sx={{
+               width:"143.46",
+              height:"48.79px",
+              top:"18px",
+              left:"3.22px",
+              radius:"8px",
+              position:"absolute",
+              }}>
+                  <img src={assets.image_2} alt="" />
+              </Box>
       <Box sx={{
             width:"26.61px",
             height:"26.61px",
             position:"absolute",
             top:"150px",
             left:"38.74px",
+           backgroundColor:"color",
       }}>
         <DashboardIcon/>
       </Box>
-       <Typography sx={{
+       <Typography  component={Link} to="/" sx={{
              width:"125.3px",
             height:"30px",
             position:"absolute",
@@ -33,8 +50,10 @@ function Sidebar() {
             fontWeight:"500",
             fontSize:"20px",
             lineHeight:"150%",
-              linespacing:"0%",
-           color:"#6B4FC8",
+             letterSpacing:"0%",
+            backgroundColor:"color",
+           cursor:"pointer",
+       
 
         }}>Dashboard</Typography>
         
@@ -44,10 +63,11 @@ function Sidebar() {
             position:"absolute",
             top:"217px",
             left:"39px",
+             backgroundColor:"color",
         }}>
             <img src={assets.image_3} alt="" />
         </Box>
-        <Typography sx={{
+        <Typography component={Link} to="/recruit"  sx={{
             width:"156.35px",
             height:"30px",
             position:"absolute",
@@ -57,8 +77,9 @@ function Sidebar() {
             fontWeight:"500",
             fontSize:"20px",
             lineHeight:"150%", 
-           color:"#1E1E1E",
-           linespacing:"-1.1%",
+           backgroundColor:"color",
+            letterSpacing:"-1.1%",
+            cursor:"pointer",
         }}>Recruiter Desk</Typography>
 
 
@@ -82,7 +103,8 @@ function Sidebar() {
             fontSize:"20px",
             lineHeight:"150%", 
            color:"#000000",
-           linespacing:"0%",
+            letterSpacing:"0%",
+            cursor:"pointer",
         }}>Interviews</Typography>
 
 
@@ -106,7 +128,8 @@ function Sidebar() {
             fontSize:"20px",
             lineHeight:"100%", 
            color:"#000000",
-           linespacing:"0%",
+            letterSpacing:"0%",
+            cursor:"pointer",
         }}>Assignment</Typography>
 
         <Box sx={{
@@ -129,7 +152,8 @@ function Sidebar() {
             fontSize:"20px",
             lineHeight:"150%", 
            color:"#000000",
-           linespacing:"0%",
+            letterSpacing:"0%",
+            cursor:"pointer",
         }}>Job/Internships</Typography>
 
         <Box sx={{
@@ -153,9 +177,10 @@ function Sidebar() {
             fontSize:"20px",
             lineHeight:"160%", 
            color:"#000000",
-           linespacing:"0%",
+          letterSpacing:"0%",
+          cursor:"pointer",
         }}>Logout</Typography>
-    </div>
+    </Box>
     
   )
 }

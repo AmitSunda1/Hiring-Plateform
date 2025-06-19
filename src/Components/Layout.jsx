@@ -4,9 +4,14 @@ import Sidebar from './SideBar'
 
 function Layout() {
   return (
-    <div>
-      <Header/>
-     <Sidebar/>
+    
+    <div style={{
+      backgroundColor:"#F5F6FA",     
+      
+    }} >
+      <Header />
+      <div>
+     <Sidebar/></div>
       
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RecruiteMain = () => {
+const Recruiter = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const RecruiteMain = () => {
   )
 }
 
-export default RecruiteMain
+export default Recruiter
