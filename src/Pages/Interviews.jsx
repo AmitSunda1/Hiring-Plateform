@@ -1,11 +1,30 @@
-import React from 'react'
+import React from "react";
+import { Box, Typography } from "@mui/material";
 
 const Interviews = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <Box
+      sx={{
+        padding: "20px",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Typography
+        variant="h4"
+        sx={{ mb: 2, fontFamily: "Poppins", fontWeight: 600 }}
+      >
+        Interviews
+      </Typography>
+      <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "#666" }}>
+        This page is under development. Interview management features will be
+        available soon.
+      </Typography>
+    </Box>
+  );
+};
 
-export default Interviews
+export default Interviews;
